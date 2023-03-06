@@ -1,10 +1,10 @@
-#include "UIGame.h"
+#include "TicTacToeUI.h"
 #include <QtWidgets/QApplication>
 
 int main(int argc, char *argv[])
 {
     QApplication a(argc, argv);
-    UIGame w;
+    TicTacToeUI w;
     w.show();
     return a.exec();
 }

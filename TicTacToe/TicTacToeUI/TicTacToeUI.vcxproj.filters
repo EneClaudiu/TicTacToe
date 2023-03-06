@@ -23,16 +23,16 @@
     </Filter>
   </ItemGroup>
   <ItemGroup>
-    <QtRcc Include="UIGame.qrc">
+    <QtRcc Include="TicTacToeUI.qrc">
       <Filter>Resource Files</Filter>
     </QtRcc>
-    <QtUic Include="UIGame.ui">
+    <QtUic Include="TicTacToeUI.ui">
       <Filter>Form Files</Filter>
     </QtUic>
-    <QtMoc Include="UIGame.h">
+    <QtMoc Include="TicTacToeUI.h">
       <Filter>Header Files</Filter>
     </QtMoc>
-    <ClCompile Include="UIGame.cpp">
+    <ClCompile Include="TicTacToeUI.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
     <ResourceCompile Include="$pro_name$.rc">
