@@ -4,21 +4,27 @@
 
 #include <string>
 
-class TicTacToe2 : public ITicTacToe
-{
-public:
-	bool IsWin() const override;
-	bool IsPositionEmpty(std::pair<int, int>position) const override;
-	void NextMove(std::pair<int, int> position) override;
-};
-
 class TicTacToe : public ITicTacToe
 {
+private:
+	enum Options{
+		X,
+		O,
+		None
+	};
+	Options currentOption;
+	const int boardSize = 3;
+	Options m_board[3][3];
+	int m_turnNumber;
+	std::string m_player1;
+	std::string m_player2;
 public:
 	// ITicTacToe implementation
-	bool IsWin() const override;
+	TicTacToe(std::string player1 = "Player1", std::string player2 = "Player2");
+
+	bool IsWin(std::pair<int,int> position) const override;
 	void NextMove(std::pair<int, int> position) override;
-	bool IsPositionEmpty(std::pair<int, int>position) const override;
+
 
 	// IOtherInterface implementation
 	//.....
@@ -26,11 +32,5 @@ public:
 	// other methods
 	// ......
 
-private:
-	const int boardSize = 3;
-	char m_board[3][3];
-	int m_turnNumber;
-	std::string m_player1;
-	std::string m_player2;
 };
 
