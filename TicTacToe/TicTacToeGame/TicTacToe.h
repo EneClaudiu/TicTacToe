@@ -32,6 +32,7 @@ public:
 	void SetPlayerNames(std::string player1, std::string player2) override;
 	std::string GetCurrentPlayer() const override;
 	bool IsDraw(std::pair<int, int> position) override;
+	void ResetGame() override;
 
 	// IOtherInterface implementation
 	//.....

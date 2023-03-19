@@ -18,6 +18,8 @@ private:
     QString player2;
 
     ITicTacToePtr game = ITicTacToe::Produce(ETicTacToeGameType::Impl1);
+
+    void ResetGame();
 private slots:
     void on_pushButton_player_clicked();
 

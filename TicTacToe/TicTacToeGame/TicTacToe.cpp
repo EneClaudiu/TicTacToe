@@ -106,3 +106,13 @@ bool TicTacToe::IsDraw(std::pair<int, int> position) {
 		return true;
 	return false;
 }
+
+void TicTacToe::ResetGame() {
+	for (int i = 0; i < boardSize; i++)
+		for (int j = 0; j < boardSize; j++)
+			m_board[i][j] = None;
+	m_turnNumber = 0;
+
+	m_currentPlayer = &m_player1;
+	currentOption = O;
+}

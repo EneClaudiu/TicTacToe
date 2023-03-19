@@ -23,6 +23,7 @@ public:
 	virtual void SetPlayerNames(std::string player1, std::string player2) = 0;
 	virtual std::string GetCurrentPlayer() const = 0;
 	virtual bool IsDraw(std::pair<int, int> position) = 0;
+	virtual void ResetGame() = 0;
 
 	virtual ~ITicTacToe() = default;
 };
