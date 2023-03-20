@@ -1,0 +1,107 @@
+\hypertarget{class_i_tic_tac_toe}{}\doxysection{ITic\+Tac\+Toe Class Reference}
+\label{class_i_tic_tac_toe}\index{ITicTacToe@{ITicTacToe}}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+virtual bool \mbox{\hyperlink{class_i_tic_tac_toe_a29b1201bd74130f2d5687171ea6001c7}{Is\+Win}} (std\+::pair$<$ int, int $>$ position)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_tic_tac_toe_ae09ec22bdc03fa51ec8471babece7140}{Next\+Move}} (std\+::pair$<$ int, int $>$ position)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_tic_tac_toe_a812449ff4b7998ff89b506e3ebf21538}{Print\+Board}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_tic_tac_toe_a770fd36a15b7cc1bb599c3537426788f}{Set\+Player\+Names}} (std\+::string player1, std\+::string player2)=0
+\item 
+virtual std\+::string \mbox{\hyperlink{class_i_tic_tac_toe_a6d7f9791294b40d89e0d001fb5708b56}{Get\+Current\+Player}} () const =0
+\item 
+virtual bool \mbox{\hyperlink{class_i_tic_tac_toe_ab55d760af0d8090ffd4089b6f690cf45}{Is\+Draw}} (std\+::pair$<$ int, int $>$ position)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_tic_tac_toe_a55f8fe8510303088fa2c27c815ef6e96}{Reset\+Game}} ()=0
+\item 
+virtual void \mbox{\hyperlink{class_i_tic_tac_toe_a65a231726fe431eb2c0565f56c7633d0}{Add\+Tic\+Tac\+Toe\+Listener}} (ITic\+Tac\+Toe\+Listener $\ast$listener)=0
+\item 
+virtual void \mbox{\hyperlink{class_i_tic_tac_toe_a32fc3172d3463d9b14161a915b2e4db6}{Remove\+Tic\+Tac\+Toe\+Listener}} (ITic\+Tac\+Toe\+Listener $\ast$listener)=0
+\item 
+virtual \mbox{\hyperlink{class_i_tic_tac_toe_aa87ded7655e1d2d2baa1c72b6879c77a}{$\sim$\+ITic\+Tac\+Toe}} ()=default
+\end{DoxyCompactItemize}
+\doxysubsection*{Static Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+static ITic\+Tac\+Toe\+Ptr \mbox{\hyperlink{class_i_tic_tac_toe_a18243e35f296ebc4e65b405c732eca1c}{Produce}} (ETic\+Tac\+Toe\+Game\+Type type)
+\end{DoxyCompactItemize}
+
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{class_i_tic_tac_toe_aa87ded7655e1d2d2baa1c72b6879c77a}\label{class_i_tic_tac_toe_aa87ded7655e1d2d2baa1c72b6879c77a}} 
+\index{ITicTacToe@{ITicTacToe}!````~ITicTacToe@{$\sim$ITicTacToe}}
+\index{````~ITicTacToe@{$\sim$ITicTacToe}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{$\sim$ITicTacToe()}{~ITicTacToe()}}
+{\footnotesize\ttfamily virtual ITic\+Tac\+Toe\+::$\sim$\+ITic\+Tac\+Toe (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [virtual]}, {\ttfamily [default]}}
+
+Destructor. 
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{class_i_tic_tac_toe_a65a231726fe431eb2c0565f56c7633d0}\label{class_i_tic_tac_toe_a65a231726fe431eb2c0565f56c7633d0}} 
+\index{ITicTacToe@{ITicTacToe}!AddTicTacToeListener@{AddTicTacToeListener}}
+\index{AddTicTacToeListener@{AddTicTacToeListener}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{AddTicTacToeListener()}{AddTicTacToeListener()}}
+{\footnotesize\ttfamily virtual void ITic\+Tac\+Toe\+::\+Add\+Tic\+Tac\+Toe\+Listener (\begin{DoxyParamCaption}\item[{ITic\+Tac\+Toe\+Listener $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Functia adauga un listener. \mbox{\Hypertarget{class_i_tic_tac_toe_a6d7f9791294b40d89e0d001fb5708b56}\label{class_i_tic_tac_toe_a6d7f9791294b40d89e0d001fb5708b56}} 
+\index{ITicTacToe@{ITicTacToe}!GetCurrentPlayer@{GetCurrentPlayer}}
+\index{GetCurrentPlayer@{GetCurrentPlayer}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{GetCurrentPlayer()}{GetCurrentPlayer()}}
+{\footnotesize\ttfamily virtual std\+::string ITic\+Tac\+Toe\+::\+Get\+Current\+Player (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption}) const\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Functie care returneaza jucatorul curent. \mbox{\Hypertarget{class_i_tic_tac_toe_ab55d760af0d8090ffd4089b6f690cf45}\label{class_i_tic_tac_toe_ab55d760af0d8090ffd4089b6f690cf45}} 
+\index{ITicTacToe@{ITicTacToe}!IsDraw@{IsDraw}}
+\index{IsDraw@{IsDraw}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{IsDraw()}{IsDraw()}}
+{\footnotesize\ttfamily virtual bool ITic\+Tac\+Toe\+::\+Is\+Draw (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Functie care verifica daca jocul curent s-\/a terminat in remiza. \mbox{\Hypertarget{class_i_tic_tac_toe_a29b1201bd74130f2d5687171ea6001c7}\label{class_i_tic_tac_toe_a29b1201bd74130f2d5687171ea6001c7}} 
+\index{ITicTacToe@{ITicTacToe}!IsWin@{IsWin}}
+\index{IsWin@{IsWin}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{IsWin()}{IsWin()}}
+{\footnotesize\ttfamily virtual bool ITic\+Tac\+Toe\+::\+Is\+Win (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Functie care verifica cand un joc e castigat. Primeste o pozitie ca parametru si daca in urma mutarii pe pozitia respectiva jocul s-\/a castigat. \mbox{\Hypertarget{class_i_tic_tac_toe_ae09ec22bdc03fa51ec8471babece7140}\label{class_i_tic_tac_toe_ae09ec22bdc03fa51ec8471babece7140}} 
+\index{ITicTacToe@{ITicTacToe}!NextMove@{NextMove}}
+\index{NextMove@{NextMove}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{NextMove()}{NextMove()}}
+{\footnotesize\ttfamily virtual void ITic\+Tac\+Toe\+::\+Next\+Move (\begin{DoxyParamCaption}\item[{std\+::pair$<$ int, int $>$}]{position }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Functie care pune X sau O pe o pozitie. Primeste o pozitie ca parametru. \mbox{\Hypertarget{class_i_tic_tac_toe_a812449ff4b7998ff89b506e3ebf21538}\label{class_i_tic_tac_toe_a812449ff4b7998ff89b506e3ebf21538}} 
+\index{ITicTacToe@{ITicTacToe}!PrintBoard@{PrintBoard}}
+\index{PrintBoard@{PrintBoard}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{PrintBoard()}{PrintBoard()}}
+{\footnotesize\ttfamily virtual void ITic\+Tac\+Toe\+::\+Print\+Board (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Functie care afiseaza tabla. \mbox{\Hypertarget{class_i_tic_tac_toe_a18243e35f296ebc4e65b405c732eca1c}\label{class_i_tic_tac_toe_a18243e35f296ebc4e65b405c732eca1c}} 
+\index{ITicTacToe@{ITicTacToe}!Produce@{Produce}}
+\index{Produce@{Produce}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{Produce()}{Produce()}}
+{\footnotesize\ttfamily static ITic\+Tac\+Toe\+Ptr ITic\+Tac\+Toe\+::\+Produce (\begin{DoxyParamCaption}\item[{ETic\+Tac\+Toe\+Game\+Type}]{type }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [static]}}
+
+Functie care produce un obiect de tipul Tic\+Tac\+Toe dupa implementarea specificata. \mbox{\Hypertarget{class_i_tic_tac_toe_a32fc3172d3463d9b14161a915b2e4db6}\label{class_i_tic_tac_toe_a32fc3172d3463d9b14161a915b2e4db6}} 
+\index{ITicTacToe@{ITicTacToe}!RemoveTicTacToeListener@{RemoveTicTacToeListener}}
+\index{RemoveTicTacToeListener@{RemoveTicTacToeListener}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{RemoveTicTacToeListener()}{RemoveTicTacToeListener()}}
+{\footnotesize\ttfamily virtual void ITic\+Tac\+Toe\+::\+Remove\+Tic\+Tac\+Toe\+Listener (\begin{DoxyParamCaption}\item[{ITic\+Tac\+Toe\+Listener $\ast$}]{listener }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Functia sterge un listener. \mbox{\Hypertarget{class_i_tic_tac_toe_a55f8fe8510303088fa2c27c815ef6e96}\label{class_i_tic_tac_toe_a55f8fe8510303088fa2c27c815ef6e96}} 
+\index{ITicTacToe@{ITicTacToe}!ResetGame@{ResetGame}}
+\index{ResetGame@{ResetGame}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{ResetGame()}{ResetGame()}}
+{\footnotesize\ttfamily virtual void ITic\+Tac\+Toe\+::\+Reset\+Game (\begin{DoxyParamCaption}{ }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Functie care reseteaza jocul, in urma finalizarii unui joc. \mbox{\Hypertarget{class_i_tic_tac_toe_a770fd36a15b7cc1bb599c3537426788f}\label{class_i_tic_tac_toe_a770fd36a15b7cc1bb599c3537426788f}} 
+\index{ITicTacToe@{ITicTacToe}!SetPlayerNames@{SetPlayerNames}}
+\index{SetPlayerNames@{SetPlayerNames}!ITicTacToe@{ITicTacToe}}
+\doxysubsubsection{\texorpdfstring{SetPlayerNames()}{SetPlayerNames()}}
+{\footnotesize\ttfamily virtual void ITic\+Tac\+Toe\+::\+Set\+Player\+Names (\begin{DoxyParamCaption}\item[{std\+::string}]{player1,  }\item[{std\+::string}]{player2 }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [pure virtual]}}
+
+Functie care seteaza numele jucatorilor. 
+
+The documentation for this class was generated from the following file\+:\begin{DoxyCompactItemize}
+\item 
+E\+:/\+Code/ITic\+Tac\+Toe.\+h\end{DoxyCompactItemize}

@@ -1,0 +1,36 @@
+\hypertarget{_i_tic_tac_toe_8h_source}{}\doxysection{ITic\+Tac\+Toe.\+h}
+\label{_i_tic_tac_toe_8h_source}\index{E:/Code/ITicTacToe.h@{E:/Code/ITicTacToe.h}}
+
+\begin{DoxyCode}{0}
+\DoxyCodeLine{00001\ \textcolor{preprocessor}{\#pragma\ once}}
+\DoxyCodeLine{00002\ }
+\DoxyCodeLine{00003\ \textcolor{preprocessor}{\#include\ <utility>}}
+\DoxyCodeLine{00004\ \textcolor{preprocessor}{\#include\ <memory>}}
+\DoxyCodeLine{00005\ \textcolor{preprocessor}{\#include\ <string>}}
+\DoxyCodeLine{00006\ }
+\DoxyCodeLine{00007\ \textcolor{preprocessor}{\#include\ "{}ITicTacToeListener.h"{}}}
+\DoxyCodeLine{00011\ \textcolor{keyword}{enum\ class}\ ETicTacToeGameType}
+\DoxyCodeLine{00012\ \{}
+\DoxyCodeLine{00013\ \ \ \ \ Impl1,}
+\DoxyCodeLine{00014\ \};}
+\DoxyCodeLine{00015\ }
+\DoxyCodeLine{00019\ \textcolor{keyword}{using\ }ITicTacToePtr\ =\ std::shared\_ptr<class\ ITicTacToe>;}
+\DoxyCodeLine{00020\ }
+\DoxyCodeLine{00021\ \textcolor{keyword}{class\ }\mbox{\hyperlink{class_i_tic_tac_toe}{ITicTacToe}}}
+\DoxyCodeLine{00022\ \{}
+\DoxyCodeLine{00023\ \textcolor{keyword}{private}:}
+\DoxyCodeLine{00024\ \textcolor{keyword}{public}:}
+\DoxyCodeLine{00025\ \ \ \ \ \textcolor{keyword}{static}\ ITicTacToePtr\ \mbox{\hyperlink{class_i_tic_tac_toe_a18243e35f296ebc4e65b405c732eca1c}{Produce}}(ETicTacToeGameType\ type);\ }
+\DoxyCodeLine{00027\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_tic_tac_toe_a29b1201bd74130f2d5687171ea6001c7}{IsWin}}(std::pair<int,int>\ position)\ =\ 0;}
+\DoxyCodeLine{00028\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_tic_tac_toe_ae09ec22bdc03fa51ec8471babece7140}{NextMove}}(std::pair<int,\ int>\ position)\ =\ 0;\ }
+\DoxyCodeLine{00029\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_tic_tac_toe_a812449ff4b7998ff89b506e3ebf21538}{PrintBoard}}()\ =\ 0;\ }
+\DoxyCodeLine{00030\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_tic_tac_toe_a770fd36a15b7cc1bb599c3537426788f}{SetPlayerNames}}(std::string\ player1,\ std::string\ player2)\ =\ 0;\ }
+\DoxyCodeLine{00031\ \ \ \ \ \textcolor{keyword}{virtual}\ std::string\ \mbox{\hyperlink{class_i_tic_tac_toe_a6d7f9791294b40d89e0d001fb5708b56}{GetCurrentPlayer}}()\ \textcolor{keyword}{const}\ =\ 0;\ }
+\DoxyCodeLine{00032\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{bool}\ \mbox{\hyperlink{class_i_tic_tac_toe_ab55d760af0d8090ffd4089b6f690cf45}{IsDraw}}(std::pair<int,\ int>\ position)\ =\ 0;\ }
+\DoxyCodeLine{00033\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_tic_tac_toe_a55f8fe8510303088fa2c27c815ef6e96}{ResetGame}}()\ =\ 0;\ }
+\DoxyCodeLine{00035\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_tic_tac_toe_a65a231726fe431eb2c0565f56c7633d0}{AddTicTacToeListener}}(ITicTacToeListener*\ listener)\ =\ 0;\ }
+\DoxyCodeLine{00036\ \ \ \ \ \textcolor{keyword}{virtual}\ \textcolor{keywordtype}{void}\ \mbox{\hyperlink{class_i_tic_tac_toe_a32fc3172d3463d9b14161a915b2e4db6}{RemoveTicTacToeListener}}(ITicTacToeListener*\ listener)\ =\ 0;\ }
+\DoxyCodeLine{00038\ \ \ \ \ \textcolor{keyword}{virtual}\ \mbox{\hyperlink{class_i_tic_tac_toe_aa87ded7655e1d2d2baa1c72b6879c77a}{\string~ITicTacToe}}()\ =\ \textcolor{keywordflow}{default};\ }
+\DoxyCodeLine{00039\ \};}
+
+\end{DoxyCode}
