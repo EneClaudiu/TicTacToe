@@ -3,6 +3,7 @@
 #include "ITicTacToe.h"
 
 #include <string>
+#include <vector>
 
 class TicTacToe : public ITicTacToe
 {
@@ -23,7 +24,7 @@ private:
 	char DisplayOption(Options o);
 	void ChangePlayer();
 public:
-	// ITicTacToe implementation
+
 	TicTacToe();
 
 	bool IsWin(std::pair<int,int> position) override;
@@ -34,11 +35,11 @@ public:
 	bool IsDraw(std::pair<int, int> position) override;
 	void ResetGame() override;
 
-	// IOtherInterface implementation
-	//.....
+	void AddTicTacToeListener(ITicTacToeListener* listener) override;
+	void RemoveTicTacToeListener(ITicTacToeListener* listener) override;
 
-	// other methods
-	// ......
-
+private:
+	std::vector<ITicTacToeListener*> listeners;
+	
 };
 

@@ -4,6 +4,8 @@
 #include <memory>
 #include <string>
 
+#include "ITicTacToeListener.h"
+
 enum class ETicTacToeGameType
 {
 	Impl1,
@@ -24,6 +26,9 @@ public:
 	virtual std::string GetCurrentPlayer() const = 0;
 	virtual bool IsDraw(std::pair<int, int> position) = 0;
 	virtual void ResetGame() = 0;
+
+	virtual void AddTicTacToeListener(ITicTacToeListener* listener) = 0;
+	virtual void RemoveTicTacToeListener(ITicTacToeListener* listener) = 0;
 
 	virtual ~ITicTacToe() = default;
 };

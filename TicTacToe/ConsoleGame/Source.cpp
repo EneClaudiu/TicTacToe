@@ -1,4 +1,5 @@
 #include "ITicTacToe.h"
+#include "ConsoleGameListener.h"
 
 #include <iostream>
 
@@ -9,30 +10,31 @@ int main() {
 
     ITicTacToePtr game = ITicTacToe::Produce(ETicTacToeGameType::Impl1);
 
+    ConsoleGameListener listener;
+    game->AddTicTacToeListener(&listener);
+
     game->SetPlayerNames(player1, player2);
     game->PrintBoard();
 
     int row, column;
-    std::cout << game->GetCurrentPlayer() << "'s move: "; std::cin >> row >> column;
+
+    std::cin >> row >> column;
 
     game->NextMove({ row,column });
     game->PrintBoard();
 
     while (!game->IsWin({ row,column }))
     {
-        std::cout << game->GetCurrentPlayer() << "'s move: "; std::cin >> row >> column;
+        std::cin >> row >> column;
         game->NextMove({ row,column });
         game->PrintBoard();
         if (game->IsDraw({ row,column }))
         {
-            std::cout << "Draw!";
             break;
         }
     }
-    if (game->IsWin({ row,column }))
-    {
-        std::cout << game->GetCurrentPlayer() << " won!\n";
-    }
+
+    game->RemoveTicTacToeListener(&listener);
     
     return 0;
 }

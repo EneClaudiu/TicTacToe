@@ -8,6 +8,23 @@ ITicTacToePtr ITicTacToe::Produce(ETicTacToeGameType type)
 	return {};
 }
 
+void TicTacToe::AddTicTacToeListener(ITicTacToeListener* listener)
+{
+	listeners.push_back(listener);
+}
+
+void TicTacToe::RemoveTicTacToeListener(ITicTacToeListener* listener)
+{
+	for (auto it = listeners.begin(); it != listeners.end(); ++it)
+	{
+		if (*it == listener)
+		{
+			listeners.erase(it);
+			break;
+		}
+	}
+}
+
 TicTacToe::TicTacToe() {
 	for (int i = 0; i < boardSize; i++)
 		for (int j = 0; j < boardSize; j++)
@@ -29,30 +46,43 @@ bool TicTacToe::IsWin(std::pair<int,int> position) {
 		if (m_board[newMoveRow][i] != currentOption)
 			break;
 		if (i == boardSize - 1)
+		{
+			for (ITicTacToeListener* listener : listeners)
+				listener->OnWin(*m_currentPlayer);
 			return true;
+		}
 	}
 	for (int i = 0; i < boardSize; i++)
 	{
 		if (m_board[i][newMoveColumn] != currentOption)
 			break;
-		if (i == boardSize - 1)
+		if (i == boardSize - 1) {
+			for (ITicTacToeListener* listener : listeners)
+				listener->OnWin(*m_currentPlayer);
 			return true;
+		}
 	}
 	if (newMoveColumn == newMoveRow)
 		for (int i = 0; i < boardSize; i++)
 		{
 			if (m_board[i][i] != currentOption)
 				break;
-			if (i == boardSize - 1)
+			if (i == boardSize - 1) {
+				for (ITicTacToeListener* listener : listeners)
+					listener->OnWin(*m_currentPlayer);
 				return true;
+			}
 		}
 	if (newMoveColumn + newMoveRow == boardSize - 1)
 		for (int i = 0; i < boardSize; i++)
 		{
 			if (m_board[i][boardSize - 1 - i] != currentOption)
 				break;
-			if (i == boardSize - 1)
+			if (i == boardSize - 1) {
+				for (ITicTacToeListener* listener : listeners)
+					listener->OnWin(*m_currentPlayer);
 				return true;
+			}
 		}
 	ChangePlayer();
 	return false;
@@ -76,6 +106,9 @@ void TicTacToe::NextMove(std::pair<int,int> position) {
 		m_board[position.first][position.second] = currentOption;
 		m_turnNumber++;
 	}
+	for (ITicTacToeListener* listener : listeners)
+		listener->OnMove(*m_currentPlayer);
+
 }
 void TicTacToe::SetPlayerNames(std::string player1, std::string player2) {
 	this->m_player1 = player1;
@@ -103,7 +136,11 @@ std::string TicTacToe::GetCurrentPlayer() const{
 }
 bool TicTacToe::IsDraw(std::pair<int, int> position) {
 	if (m_turnNumber == boardSize * boardSize && !this->IsWin(position))
+	{
+		for (ITicTacToeListener* listener : listeners)
+			listener->OnDraw();
 		return true;
+	}
 	return false;
 }
 
