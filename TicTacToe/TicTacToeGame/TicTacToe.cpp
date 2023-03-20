@@ -106,6 +106,11 @@ void TicTacToe::NextMove(std::pair<int,int> position) {
 		m_board[position.first][position.second] = currentOption;
 		m_turnNumber++;
 	}
+	else
+	{
+		for (ITicTacToeListener* listener : listeners)
+			listener->OnPositionInvalid();
+	}
 	for (ITicTacToeListener* listener : listeners)
 		listener->OnMove(*m_currentPlayer);
 

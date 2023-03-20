@@ -13,4 +13,10 @@ void ConsoleGameListener::OnDraw()
 void ConsoleGameListener::OnMove(std::string playerName)
 {
 	std::cout << playerName << "'s move!\n";
+
+}
+
+void ConsoleGameListener::OnPositionInvalid()
+{
+	std::cout << "Position is not valid! Try another!";
 }
