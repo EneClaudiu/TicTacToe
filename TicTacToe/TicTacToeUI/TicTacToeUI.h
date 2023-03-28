@@ -20,7 +20,7 @@ private:
     ITicTacToePtr game = ITicTacToe::Produce(ETicTacToeGameType::Impl1);
 
     void ResetGame();
-    void inline GameButtonClicked();
+    void GameButtonClicked();
 private slots:
     void on_pushButton_player_clicked();
     void on_pushButton_1_clicked();

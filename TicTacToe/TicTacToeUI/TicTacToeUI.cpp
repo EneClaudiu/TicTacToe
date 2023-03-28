@@ -72,10 +72,9 @@ void TicTacToeUI::ResetGame() {
     ui.pushButton_9->setText("");
 
     ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
-    //QMessageBox::information(this, "Reset", QString::fromStdString(game->GetCurrentPlayer()));
 }
 
-void inline TicTacToeUI::GameButtonClicked(){
+void  TicTacToeUI::GameButtonClicked(){
     QPushButton* button = qobject_cast<QPushButton*>(sender());
     if (button)
     {
