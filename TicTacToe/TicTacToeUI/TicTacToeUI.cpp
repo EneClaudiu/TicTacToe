@@ -31,165 +31,31 @@ void TicTacToeUI::on_pushButton_player_clicked() {
 }
 
 void TicTacToeUI::on_pushButton_1_clicked() {
-    if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
-        ui.pushButton_1->setText("O");
-    else
-        ui.pushButton_1->setText("X");
-    game->NextMove({ 0,0 });
-    if (game->IsWin({ 0,0 }))
-    {
-        QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
-        ResetGame();
-    }
-    else if (game->IsDraw({ 0,0 }))
-    {
-        QMessageBox::information(this, "TicTacToe", "Draw!");
-        ResetGame();
-    }
-    ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    GameButtonClicked();
 }
 void TicTacToeUI::on_pushButton_2_clicked() {
-    if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
-        ui.pushButton_2->setText("O");
-    else
-        ui.pushButton_2->setText("X");
-    game->NextMove({ 0,1 });
-    if (game->IsWin({ 0,1 }))
-    {
-        QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
-        ResetGame();
-    }
-    else if (game->IsDraw({ 0,1 }))
-    {
-        QMessageBox::information(this, "TicTacToe", "Draw!");
-        ResetGame();
-    }
-    ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    GameButtonClicked();
 }
 void TicTacToeUI::on_pushButton_3_clicked() {
-    if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
-        ui.pushButton_3->setText("O");
-    else
-        ui.pushButton_3->setText("X");
-    game->NextMove({ 0,2 });
-    if (game->IsWin({ 0,2 }))
-    {
-        QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
-        ResetGame();
-    }
-    else if (game->IsDraw({ 0,2 }))
-    {
-        QMessageBox::information(this, "TicTacToe", "Draw!");
-        ResetGame();
-    }
-    ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    GameButtonClicked();
 }
 void TicTacToeUI::on_pushButton_4_clicked() {
-    if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
-        ui.pushButton_4->setText("O");
-    else
-        ui.pushButton_4->setText("X");
-    game->NextMove({ 1,0 });
-    if (game->IsWin({ 1,0 }))
-    {
-        QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
-        ResetGame();
-    }
-    else if (game->IsDraw({ 1,0 }))
-    {
-        QMessageBox::information(this, "TicTacToe", "Draw!");
-        ResetGame();
-    }
-    ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    GameButtonClicked();
 }
 void TicTacToeUI::on_pushButton_5_clicked() {
-    if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
-        ui.pushButton_5->setText("O");
-    else
-        ui.pushButton_5->setText("X");
-    game->NextMove({ 1,1 });
-    if (game->IsWin({ 1,1 }))
-    {
-        QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
-        ResetGame();
-    }
-    else if (game->IsDraw({ 1,1 }))
-    {
-        QMessageBox::information(this, "TicTacToe", "Draw!");
-        ResetGame();
-    }
-    ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    GameButtonClicked();
 }
 void TicTacToeUI::on_pushButton_6_clicked() {
-    if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
-        ui.pushButton_6->setText("O");
-    else
-        ui.pushButton_6->setText("X");
-    game->NextMove({ 1,2 });
-    if (game->IsWin({ 1,2 }))
-    {
-        QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
-        ResetGame();
-    }
-    else if (game->IsDraw({ 1,2 }))
-    {
-        QMessageBox::information(this, "TicTacToe", "Draw!");
-        ResetGame();
-    }
-    ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    GameButtonClicked();
 }
 void TicTacToeUI::on_pushButton_7_clicked() {
-    if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
-        ui.pushButton_7->setText("O");
-    else
-        ui.pushButton_7->setText("X");
-    game->NextMove({ 2,0 });
-    if (game->IsWin({ 2,0 }))
-    {
-        QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
-        ResetGame();
-    }
-    else if (game->IsDraw({ 2,0 }))
-    {
-        QMessageBox::information(this, "TicTacToe", "Draw!");
-        ResetGame();
-    }
-    ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    GameButtonClicked();
 }
 void TicTacToeUI::on_pushButton_8_clicked() {
-    if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
-        ui.pushButton_8->setText("O");
-    else
-        ui.pushButton_8->setText("X");
-    game->NextMove({ 2,1 });
-    if (game->IsWin({ 2,1 }))
-    {
-        QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
-        ResetGame();
-    }
-    else if (game->IsDraw({ 2,1 })) {
-        QMessageBox::information(this, "TicTacToe", "Draw!");
-        ResetGame();
-    }
-    ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    GameButtonClicked();
 }
 void TicTacToeUI::on_pushButton_9_clicked() {
-    if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
-        ui.pushButton_9->setText("O");
-    else
-        ui.pushButton_9->setText("X");
-    game->NextMove({ 2,2 });
-    if (game->IsWin({ 2,2 }))
-    {
-        QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
-        ResetGame();
-    }
-    else if (game->IsDraw({ 2,2 }))
-    {
-        QMessageBox::information(this, "TicTacToe", "Draw!");
-        ResetGame();
-    }
-    ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    GameButtonClicked();
 }
 
 void TicTacToeUI::ResetGame() {
@@ -207,5 +73,33 @@ void TicTacToeUI::ResetGame() {
 
     ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
     //QMessageBox::information(this, "Reset", QString::fromStdString(game->GetCurrentPlayer()));
+}
 
+void inline TicTacToeUI::GameButtonClicked(){
+    QPushButton* button = qobject_cast<QPushButton*>(sender());
+    if (button)
+    {
+        int buttonNumber = button->objectName().right(1).toInt();
+        int buttonRow = (buttonNumber - 1) / 3;
+        int buttonColumn = (buttonNumber - 1) % 3;
+
+        if (QString::fromStdString(game->GetCurrentPlayer()) == player1)
+            button->setText("O");
+        else
+            button->setText("X");
+
+        game->NextMove({ buttonRow,buttonColumn });
+
+        if (game->IsWin({ buttonRow,buttonColumn }))
+        {
+            QMessageBox::information(this, "TicTacToe", QString::fromStdString(game->GetCurrentPlayer()) + " won!");
+            ResetGame();
+        }
+        else if (game->IsDraw({ buttonRow,buttonColumn }))
+        {
+            QMessageBox::information(this, "TicTacToe", "Draw!");
+            ResetGame();
+        }
+        ui.label->setText(QString::fromStdString(game->GetCurrentPlayer()) + "'s turn.");
+    }
 }
