@@ -47,8 +47,6 @@ bool TicTacToe::IsWin(std::pair<int,int> position) {
 			break;
 		if (i == boardSize - 1)
 		{
-			for (ITicTacToeListener* listener : listeners)
-				listener->OnWin(*m_currentPlayer);
 			return true;
 		}
 	}
@@ -57,8 +55,7 @@ bool TicTacToe::IsWin(std::pair<int,int> position) {
 		if (m_board[i][newMoveColumn] != currentOption)
 			break;
 		if (i == boardSize - 1) {
-			for (ITicTacToeListener* listener : listeners)
-				listener->OnWin(*m_currentPlayer);
+			
 			return true;
 		}
 	}
@@ -68,8 +65,7 @@ bool TicTacToe::IsWin(std::pair<int,int> position) {
 			if (m_board[i][i] != currentOption)
 				break;
 			if (i == boardSize - 1) {
-				for (ITicTacToeListener* listener : listeners)
-					listener->OnWin(*m_currentPlayer);
+				
 				return true;
 			}
 		}
@@ -79,12 +75,11 @@ bool TicTacToe::IsWin(std::pair<int,int> position) {
 			if (m_board[i][boardSize - 1 - i] != currentOption)
 				break;
 			if (i == boardSize - 1) {
-				for (ITicTacToeListener* listener : listeners)
-					listener->OnWin(*m_currentPlayer);
+				
 				return true;
 			}
 		}
-	ChangePlayer();
+	
 	return false;
 }
 
@@ -105,14 +100,34 @@ void TicTacToe::NextMove(std::pair<int,int> position) {
 	if (m_board[position.first][position.second] == None) {
 		m_board[position.first][position.second] = currentOption;
 		m_turnNumber++;
+
+		for (ITicTacToeListener* listener : listeners)
+			listener->OnMove(*m_currentPlayer);
+
+		if (IsWin(position)) {
+			for (ITicTacToeListener* listener : listeners)
+				listener->OnWin(*m_currentPlayer);
+
+			return;
+		}
+		else if (IsDraw(position)) {
+			for (ITicTacToeListener* listener : listeners)
+				listener->OnDraw();
+
+			return;
+		}
+
+		ChangePlayer();
 	}
 	else
 	{
 		for (ITicTacToeListener* listener : listeners)
 			listener->OnPositionInvalid();
 	}
-	for (ITicTacToeListener* listener : listeners)
-		listener->OnMove(*m_currentPlayer);
+	
+
+	
+
 
 }
 void TicTacToe::SetPlayerNames(std::string player1, std::string player2) {
@@ -142,8 +157,6 @@ std::string TicTacToe::GetCurrentPlayer() const{
 bool TicTacToe::IsDraw(std::pair<int, int> position) {
 	if (m_turnNumber == boardSize * boardSize && !this->IsWin(position))
 	{
-		for (ITicTacToeListener* listener : listeners)
-			listener->OnDraw();
 		return true;
 	}
 	return false;
