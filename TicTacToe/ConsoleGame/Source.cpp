@@ -1,6 +1,6 @@
 #include "ITicTacToe.h"
 #include "ConsoleGameListener.h"
-
+#include "ConsoleView.h"
 #include <iostream>
 
 int main() {
@@ -14,20 +14,20 @@ int main() {
     game->AddTicTacToeListener(&listener);
 
     game->SetPlayerNames(player1, player2);
-    game->PrintBoard();
+    ConsoleView::PrintBoard(game);
 
     int row, column;
 
     std::cin >> row >> column;
 
     game->NextMove({ row,column });
-    game->PrintBoard();
+    ConsoleView::PrintBoard(game);
 
     while (!game->IsWin({ row,column }))
     {
         std::cin >> row >> column;
         game->NextMove({ row,column });
-        game->PrintBoard();
+        ConsoleView::PrintBoard(game);
         if (game->IsDraw({ row,column }))
         {
             break;

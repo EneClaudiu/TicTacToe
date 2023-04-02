@@ -120,20 +120,20 @@ void TicTacToe::SetPlayerNames(std::string player1, std::string player2) {
 	this->m_player2 = player2;
 }
 
-char TicTacToe::DisplayOption(Options o) {
-	if (o == X)
-		return 'X';
-	if (o == O)
-		return 'O';
-	return ' ';
-}
+//char TicTacToe::DisplayOption(Options o) {
+//	if (o == X)
+//		return 'X';
+//	if (o == O)
+//		return 'O';
+//	return ' ';
+//}
 
 void TicTacToe::PrintBoard() {
-	std::cout << this->DisplayOption(this->m_board[0][0]) << " | " << this->DisplayOption(this->m_board[0][1]) << " | " << this->DisplayOption(this->m_board[0][2]) << "\n";
+	/*std::cout << this->DisplayOption(this->m_board[0][0]) << " | " << this->DisplayOption(this->m_board[0][1]) << " | " << this->DisplayOption(this->m_board[0][2]) << "\n";
 	std::cout << "--+---+--\n";
 	std::cout << this->DisplayOption(this->m_board[1][0]) << " | " << this->DisplayOption(this->m_board[1][1]) << " | " << this->DisplayOption(this->m_board[1][2]) << "\n";
 	std::cout << "--+---+--\n";
-	std::cout << this->DisplayOption(this->m_board[2][0]) << " | " << this->DisplayOption(this->m_board[2][1]) << " | " << this->DisplayOption(this->m_board[2][2]) << "\n";
+	std::cout << this->DisplayOption(this->m_board[2][0]) << " | " << this->DisplayOption(this->m_board[2][1]) << " | " << this->DisplayOption(this->m_board[2][2]) << "\n";*/
 }
 
 std::string TicTacToe::GetCurrentPlayer() const{
@@ -157,4 +157,13 @@ void TicTacToe::ResetGame() {
 
 	m_currentPlayer = &m_player1;
 	currentOption = O;
+}
+
+ITicTacToe::Options** TicTacToe::GetBoard()
+{
+	Options** board = new Options * [boardSize];
+	for (int i = 0; i < boardSize; i++) {
+		board[i] = m_board[i];
+	}
+	return board;
 }

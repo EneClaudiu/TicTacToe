@@ -17,6 +17,12 @@ class ITicTacToe
 {
 private:
 public:
+	enum Options {
+		X,
+		O,
+		None
+	};
+
 	static ITicTacToePtr Produce(ETicTacToeGameType type);
 
 	virtual bool IsWin(std::pair<int,int> position) = 0;
@@ -26,7 +32,7 @@ public:
 	virtual std::string GetCurrentPlayer() const = 0;
 	virtual bool IsDraw(std::pair<int, int> position) = 0;
 	virtual void ResetGame() = 0;
-
+	virtual Options** GetBoard() = 0;
 	virtual void AddTicTacToeListener(ITicTacToeListener* listener) = 0;
 	virtual void RemoveTicTacToeListener(ITicTacToeListener* listener) = 0;
 
